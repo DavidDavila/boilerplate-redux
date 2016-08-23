@@ -21,10 +21,9 @@ export function Html(props) {
       <title>Add Universal</title>
       <meta name="description" content="Get started with React, React Router, Redux, and Universal." />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet" />
       <link rel="apple-touch-icon" href="apple-touch-icon.png" />
-      <link rel="stylesheet" href="/public/styles/styles.css" type="text/css"/>
-      <link rel="stylesheet" href="/public/styles/fonts.css" type="text/css"/>
+      <link rel="stylesheet" href="static/styles/styles.css" type="text/css"/>
+      <link rel="stylesheet" href="static/styles/fonts.css" type="text/css"/>
       <base href="/" />
       {/* Place favicon.ico in the root directory */}
 

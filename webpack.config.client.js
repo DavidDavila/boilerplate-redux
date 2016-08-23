@@ -67,10 +67,12 @@ module.exports = {
         test: /\.scss$/,
         loaders: ["style", "css", "sass"]
       },
-     {
-        test: /\.(eot|svg|ttf|woff|woff2)$/,
-        loader: 'file?name=public/fonts/[name].[ext]'
-      },
+      { test: /\.eot/, loader: 'url-loader?limit=100000&mimetype=application/vnd.ms-fontobject' },
+      { test: /\.woff2/, loader: 'url-loader?limit=100000&mimetype=application/font-woff2' },
+      { test: /\.woff/, loader: 'url-loader?limit=100000&mimetype=application/font-woff' },
+      { test: /\.ttf/, loader: 'url-loader?limit=100000&mimetype=application/font-ttf' },
+      { test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "url-loader?limit=10000&minetype=application/font-woff" }, 
+      { test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "file-loader" },
       { test: /\.css$/, loader: ExtractTextPlugin.extract({
           fallbackLoader: "style-loader",
           loader: "css-loader"

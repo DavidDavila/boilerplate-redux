@@ -17,7 +17,6 @@ const hostname = 'localhost';
 const port     = 3007;
 
 function getMarkup(store, render_props) {
-  const uri = __PRODUCTION__ ? '' : 'https://localhost:3006';
 
   const component = (
     <Provider store={store} key="provider">
@@ -28,13 +27,13 @@ function getMarkup(store, render_props) {
   return '<!doctype html>\n' + renderToString(
     <Html
       component = {component}
-      script    = {`${uri}/client/index.js`}
+      script    = {`client/index.js`}
       state     = {store.getState()}
     />
   );
 }
-
-app.use('/static', express.static('/public'));
+app.use('/client', express.static('client'));
+app.use('/static', express.static('public'));
 
 app.use(function (req, res) {
   match({

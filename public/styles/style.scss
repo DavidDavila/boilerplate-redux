@@ -17,7 +17,17 @@ h1{
 	font-size: 47px;
     line-height: 59px;
     color: $black;
-    margin-bottom: 50px;
+   
+}
+h2{
+	
+    padding-top: 8px;
+    clear: none;
+    color: #c6c4c4;
+    font-size: 33px;
+    line-height: 41px;
+    font-weight: 400;
+
 }
 a{
 	color:$black;
@@ -45,13 +55,12 @@ a{
 }
 button{
 	cursor:pointer;
-	display: inline-block;
     width: auto;
     height: auto;
     font-size: 14px;
     margin: 20px;
     padding: 12px 38px;
-    float: left;
+  	display: inline-block;
     border: 2px solid #1acd60;
     background-color: #fff;
     -webkit-transition: background-color .3s ease;

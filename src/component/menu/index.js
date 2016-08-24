@@ -38,13 +38,13 @@ export default class Menu extends Component {
   render() {
     return (
       <header className="container" style={style.header}>
-        <a style={style.img} href="https://hermanosclever.com/" target="_blank"><img src=""/></a>
+        <a style={style.img} href="http://hermanosclever.com/" target="_blank"><img src="static/images/logo.png"/></a>
         <ul style={style.menu} className="menu">
           <li style={style.menu.item}>
             <IndexLink to="/" style={style.menu.item.link} activeClassName="selected" className="menu-item">Home</IndexLink>
           </li>
           <li style={style.menu.item}>
-            <Link to="/counter" style={style.menu.item.link} activeClassName="selected" className="menu-item">Counter</Link>
+            <Link to="/contador" style={style.menu.item.link} activeClassName="selected" className="menu-item">Contador</Link>
           </li>
         </ul>
       </header>

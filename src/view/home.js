@@ -15,6 +15,9 @@ const style = styler
 		text-align: center;
 		font-weight:bold;
 
+	marginBottom
+		margin-bottom: 50px;
+
 	image
 		display: block;
 		margin-left  : auto;
@@ -28,10 +31,15 @@ export default class Page extends Component {
   return (
 			<section className="table" style={style.container}>
 				<div className="table-cell">
-					<h1 style={style.header}>
-						BoilerPlate Redux :)
-					</h1>
-					<img src="/statics/images/logo.png" style={style.image}/>
+					<div className="container">
+						<h1 style={style.header}>
+							BoilerPlate
+						</h1>
+						<h2 style={style.marginBottom}>
+							Redux, React Universal, Webpack, Sass, Styles inline, Live Reload
+						</h2>
+						<img src="static/images/logo.png" style={style.image}/>
+					</div>
 				</div>
 			</section>
 		);

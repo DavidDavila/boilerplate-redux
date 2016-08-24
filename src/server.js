@@ -18,7 +18,7 @@ const hostname = 'localhost';
 const port     = 3007;
 
 function getMarkup(store, render_props, metadata) {
-
+  
   const component = (
     <Provider store={store} key="provider">
       <RoutingContext {...render_props} />

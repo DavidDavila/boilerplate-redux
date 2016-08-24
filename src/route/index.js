@@ -13,7 +13,7 @@ export default (
   <Route path="/" component={Layout}>
     <IndexRoute component={Home} />
 
-    <Route path="/counter" component={CounterView} />
+    <Route path="/contador" component={CounterView} />
     <Route path="/settings" component={Setting} />
     <Route path="*" component={NotFound} />
   </Route>

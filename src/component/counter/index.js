@@ -7,18 +7,15 @@ import * as counterAction from './action/counter-action';
 
 const style = styler`
   b
-    font-size: 29px
-  menu
-    list-style-type: none
- 
-    item
-      display: inline-block
- 
-      link
-        display         : inline-block
-        text-decoration : none
-        color           : #000000
-        padding         : 0.4em
+    font-size: 40px;
+    font-family: WorkSans
+    margin:60px;
+    display:block;
+    color: #222;
+  p
+    overflow: hidden;
+    display: block;
+    text-align: center;
 `;
 // NOTE: http://rackt.github.io/redux/docs/recipes/WritingTests.html
 export class Counter extends Component {
@@ -30,13 +27,13 @@ export class Counter extends Component {
   render() {
     return (
       <div>
-        <p style={style.b}> El resultado de tu contador es: 
-          <b >{this.props.counter}</b>
-        </p>
+        <h2> El valor de tu contador es: 
+          <b style={style.b}>{this.props.counter}</b>
+        </h2>
 
-        <p>
-          <button style={style.menu.item} type="button" onClick={this.props.decrement}>Restar</button>
-          <button style={style.menu.item} type="button" onClick={this.props.increment}>Sumar</button>
+        <p style={style.p}>
+          <button  type="button" onClick={this.props.decrement}>Restar</button>
+          <button  type="button" onClick={this.props.increment}>Sumar</button>
         </p>
       </div>
     );

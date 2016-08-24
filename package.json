@@ -11,7 +11,7 @@
     "watch-server": "rm -rf server && node ./node_modules/webpack/bin/webpack --colors --config webpack.config.server-start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Carey Hinoki <carey.hinoki@gmail.com> (http://www.careyhinoki.me/)",
+  "author": "David Dávila",
   "license": "MIT",
   "dependencies": {
     "express": "^4.13.3",

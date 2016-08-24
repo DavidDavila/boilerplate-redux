@@ -8,6 +8,7 @@ import { renderToString } from 'react-dom/server';
 import configureStore from './store/configure-store';
 import HtmlContainer from './layout/html';
 import RouteContainer from './route';
+import { Meta } from './config';
 
 let Html = HtmlContainer;
 let Route = RouteContainer;
@@ -16,7 +17,7 @@ const app      = express();
 const hostname = 'localhost';
 const port     = 3007;
 
-function getMarkup(store, render_props) {
+function getMarkup(store, render_props, metadata) {
 
   const component = (
     <Provider store={store} key="provider">
@@ -26,9 +27,11 @@ function getMarkup(store, render_props) {
 
   return '<!doctype html>\n' + renderToString(
     <Html
+      metadata  = {metadata}
       component = {component}
-      script    = {`client/index.js`}
+      script    = {`http://localhost:3006/client/index.js`}
       state     = {store.getState()}
+
     />
   );
 }
@@ -47,9 +50,10 @@ app.use(function (req, res) {
     } else if (redirection_location) {
       res.redirect(302, redirectLocation.pathname + redirection_location.search);
     } else if (render_props) {
+
       const store = configureStore({});
 
-      res.status(200).send(getMarkup(store, render_props));
+      res.status(200).send(getMarkup(store, render_props, Meta[req.url] ));
     } else {
       res.status(400).send('Not Found');
     }

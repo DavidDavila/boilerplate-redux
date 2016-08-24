@@ -25,11 +25,12 @@ export class Counter extends Component {
 
   componentDidMount() {
     console.log(8);
+    console.log(89);
   }
   render() {
     return (
       <div>
-        <p style={style.b}> your counter
+        <p style={style.b}> El resultado de tu contador es: 
           <b >{this.props.counter}</b>
         </p>
 

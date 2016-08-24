@@ -11,13 +11,13 @@ config.devtool = 'inline-source-map';
 
 config.entry.index.unshift(
   // http://webpack.github.io/docs/webpack-dev-server.html#inline-mode
-  'webpack-dev-server/client?https://' + hostname + ':' + port,
+  'webpack-dev-server/client?http://' + hostname + ':' + port,
 
   // http://webpack.github.io/docs/webpack-dev-server.html#hot-module-replacement
   'webpack/hot/only-dev-server'
 );
 
-config.output.publicPath = 'https://' + hostname + ':' + port + '/client';
+config.output.publicPath = 'http://' + hostname + ':' + port + '/client';
 
 config.plugins = [
   new webpack.DefinePlugin({
@@ -69,7 +69,7 @@ config.module.postLoaders = [{
 
 config.devServer = {
   hot:    true,
-  https:  true,
+  https:  false,
   inline: true,
   noInfo: true,
   port:   port
